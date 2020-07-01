@@ -1,0 +1,103 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+ }
+
+body{
+    background: #f2f2f2;;
+    font-size: 16px;
+}
+
+.wrap{ /*clase*/
+    width: 90%;
+    max-width: 400px; /*Margen del borde al elemento*/
+    margin: auto;
+}
+
+form{ /* formato del cuadro blanco*/
+    position: relative;
+    width: 100%;  /* (ancho)tamaño del espacio blanco*/
+    height: 500px; /*(altura)*/
+    padding-left: 20px; /*espacio del form a la caja */
+    padding-top: 30px; /*espacio de arriba del forma la caja */
+    background : #fff; /*color de relleno*/
+    overflow: hidden;
+    box-shadow: 0 0 10px grey;
+    /*border-radius: 30px; */
+    border-top: 4px solid #536dfe;
+    margin:20px 0;  /*centra la forma*/ 
+}
+
+/*Le da formato a 3 elemntos*/
+form input[type="text"],
+form input[type="email"], 
+form input[type="password"],
+form textarea{
+    border: 1px solid #536dfe; /*color de borde del cuadro*/
+    border-radius: 1px;
+    padding: 16px; 
+    width: 90%; /*Ancho del cuadro*/
+    margin-bottom: 1px; /*Interlineado*/
+    font-family: "Roboto";
+    font-size: 1em;
+    color: #141938;
+}
+
+/*Resalta los cuadros al escribir*/
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form textarea:focus{
+    border: 2px solid #3f51b5;
+    padding: 15;  /*Uno menos que el anterior*/
+}
+
+/*Formato de tamaño del textArea*/
+form textarea{
+    max-width: 90%;
+    min-width: 90%;
+    max-height: 150px;
+    min-height: 150px;
+}
+
+/*Formato de: class="alert error*/ 
+.alert{   
+    padding:  10px;
+    color: #fff;  /*color de letra blanco*/
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    max-width: 90%;
+}
+
+
+.alert.error{
+    background: #f2dede; /*color de relleno rojo*/
+    border: 1px solid #a94442; /*Borde del recuadro*/
+    color: #a94442; /*Color de letra*/ 
+}
+
+.alert.success{
+    background:  #4caf50;
+}
+
+.boton,
+form input[type="submit"]{
+    padding: 15px;
+    background: #ed572a;
+    color: #e1e9fa;
+    font-size: 1em;
+    font-family: "Roboto";
+    border-radius: 2px;
+    border: none;
+    cursor: pointer; /*cambia el cursor al pasarlo por el*/
+    margin-left: 59%;
+}
+
+
+form input[type="submit"]:hover{
+    background: #e64a19;
+}
