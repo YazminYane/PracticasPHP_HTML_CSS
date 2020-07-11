@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------------------------------------
 /  En este ejercicio se muestra los datos desde una base de datos  
-/  Con un archivo del 4_usuarios.php
-/  En este ejercicio el boton agregar si funciona 
+/  Con el archivo 4_usuarios.php
+/  En este ejercicio se pretende que el boton agregar si funcione 
 /------------------------------------------------------------------------------------------------*/
 
 var btn_cargar = document.getElementById('btn_cargar_usuarios'),
@@ -66,26 +66,90 @@ function cargarUsuarios(){
     peticion.send();
 }
 
+//Se ejecuta cada que se clickea en cargar usuarios
+function agregarUsuarios(e){
+
+    e.preventDefault();     // se evita el envio del formulario
+
+    var peticion = new XMLHttpRequest();    
+
+    peticion.open('POST', 'php/5_insertar.php');
+
+    //Obtenert datos del formulario y con trim() Elimina espacios en blanco de la cadena
+    usuario_nombre = formulario.nombre.value.trim();
+    // Convierte el texto a entero, pero de no haber algún numero no regresara que no es numero
+    usuario_edad = parseInt(formulario.edad.value.trim());
+    usuario_pais = formulario.pais.value.trim();
+    usuario_correo = formulario.correo.value.trim();
+
+
+    if( formulario_valido() ){
+
+        // console.log('Todo esta correcto');
+
+        error_box.classList.remove('active');
+
+        var parametros = 'nombre=' + usuario_nombre + '&edad=' + usuario_edad + '&pais=' + usuario_pais + '&correo=' + usuario_correo;
+
+        // Establece el header de como queremos enviar la peticion, cuando se recibe ni es necesario
+        peticion.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        loader.classList.add('active');
+
+        peticion.onload = function(){
+            //Vuelve a cargar los datos de la tabla 
+            cargarUsuarios();
+
+            //Al cargar los datos limpia las respectivas cajas de texto
+            formulario.nombre.value = '';
+            formulario.edad.value = '';
+            formulario.correo.value = '';
+            formulario.pais.value = '';   
+        }
+        
+        peticion.onreadystatechange = function(){
+
+            if(peticion.readyState == 4 && peticion.status == 200){
+                loader.classList.remove('active');
+            }
+        }
+
+        // A si se envian los datos a php
+        peticion.send(parametros);
+
+        // Los datos que esta enviando a insertar.php
+        console.log(parametros);
+
+    }else{
+
+        error_box.classList.add('active');
+        //error_box.innerHTML = 'Por favor complete el formulario correctamente';
+    }
+}
+
+// Esta funcion le funcion a cargarUsuarios
 btn_cargar.addEventListener('click', function(){
     cargarUsuarios();
 });
 
-
-/*
-function cargarUsuarios(e){
-
-}
-
-function agregarUsuarios(e){
-    e.preventDefault
-
-    var peticion = new XMLHttpRequest();
-    peticion.open('POST', 'php/5_insertar.php');
-}
-
-
+// Esta funcion al boton cargar
 formulario.addEventListener('submit', function(e){
     agregarUsuarios(e);
 });
-*/
+
+function formulario_valido(){
+    if(usuario_nombre == ''){
+        return false;
+    }else if(isNaN(usuario_edad)){ // Pregunta si el parametro es un numero
+        return false;
+    }else if(usuario_pais == ''){
+        return false;
+    }else if(usuario_correo == ''){
+        return false;
+    }
+
+    return true;
+}
+
+
+
 

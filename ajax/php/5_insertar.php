@@ -1,10 +1,10 @@
 <?php
 
     // Con esto no se muestra un error en pantalla
-    //error_reporting(0);
+    error_reporting(0);
 
     //Para indicar que el archivo tendrá la estructura de Un JSON
-    //header( 'Content-type: application/json; charset=utf-8' );
+    header( 'Content-type: application/json; charset=utf-8' );
 
     $nombre = $_POST['nombre'];
     $edad = $_POST['edad'];
@@ -16,12 +16,12 @@
 
         if( $nombre == ''){
             return false;
-        }elseif( $edad == '' || is_int($edad) ){
+        }else if( $edad == '' || is_int($edad) ){
             return false;
-        }elseif($pais == ''){
+        }else if($pais == ''){
             return false;
-        }elseif($correo == ''){
-            return false
+        }else if($correo == ''){
+            return false;
         }
 
         return true;
@@ -34,32 +34,28 @@
 
         if( $conexion -> connect_errno){ // si la no es conexion correcta
 
-            $respuesta = [ 'error' => true ]
+            $respuesta = ['error'=>true];
         
         }else{
 
             $statement = $conexion -> prepare(
-                "INSERT INTO usuariosAjax(nombre, edad, pais, email) VALUES (?, ?, ?, ?)"
+                "INSERT INTO usuariosAjax( nombre, edad, pais, email ) VALUES ( ?, ?, ?, ? )"
             );
 
             //siss : string, int, string, string 
             $statement -> bind_param( "siss", $nombre, $edad, $pais, $correo);
             $statement -> execute();    //Executa la consulta 
 
-            if( $conexion -> affected_rows <= 0){
+            if( $conexion -> affected_rows <= 0){  // significa que no se egrego alguna fila
                 $respuesta = [ 'error' => true ];
             }
-            $respuesta = [];
 
+            $respuesta = [];
         }
         
     }else{
         $respuesta = ['error' => true ];
     }
-
-    $respuesta = [];
     echo json_encode($respuesta);
-
-   
-
+    
 ?>
