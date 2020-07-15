@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    background: url(../img/fondo.jpg)
+}
+
+.contenedor{
+    background: rgba(0, 0, 0, 0.7);
+    /*transform: translate(-50%, -50%);*/
+    /*background-image: none;*/
+    width: 400px;
+    margin-top: 50px;
+    margin-left: 460px;
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0);
+    
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+   
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+}
+
+.formulario input[type="text"], 
+.formulario input[type="password"] {
+    padding: 10px 0;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    font-size: 16px;
+    color: #fff;
+    outline: none;
+
+    box-sizing: border-box;
+    box-shadow:none;
+} 
+
+/*
+.contenedor formulario div {
+    position: relative;
+}
+
+.contenedor formulario div label {
+    position: absolutes;
+    top: 10px;
+    left: 0;
+    color: #999;
+    transition: .5s;
+    pointer-events: none;
+
+}
+
+.formulario input:focus ~ label {
+    top: -12px;
+    left: 0;
+    color: #f7497d;
+}
+*/
+
+/*
+.formulario{
+    background: rgba(0, 0, 0, 0);
+    padding-left: 30px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-right: 40px;
+    color: white;
+    font-size: 18px;
+}
+
+.texto-registrate {
+    color: white;
+    text-align: center;
+}
+*/
+
+
+/*
+.formulario .submit-btn {
+    width: 80%;
+    height: 60%;
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    line-height: 18px;
+    background: #899696;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid;
+
+    border-radius: 25px;
+    -webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+*/
+
+
+/*
+.formulario input[type = "submit"]:hover {
+    background: yellowgreen;
+    color: violet;
+}
+
+.formulario label {
+    color: white;
+ 
+}
+
+*/
+
+
+

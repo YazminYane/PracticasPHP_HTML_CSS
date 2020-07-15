@@ -46,7 +46,7 @@
 
 
     $totalarticulo = $conexion -> query('SELECT FOUND_ROWS() as total');
-    echo $totalarticulo;
+    //echo $totalarticulo;
 
     $totalarticulo = $totalarticulo -> fetch()['total'];
 
