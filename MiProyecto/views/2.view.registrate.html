@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/2.style.registrate.css">
+    <title>Registrate</title>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1 class="registrate">Registrate</h1>
+
+        <form class="formulario">
+
+            <div>
+                <input id="nombre" type="text" name="nombre" required="required" autocomplete="off">
+                <label for="nombre">Nombre Completo:</label>
+            </div>
+
+            <div>
+                <input id="email" type="email" name="email" required="required" autocomplete="off">
+                <label for="email">E-mail:</label>
+            </div>
+
+            <div>
+                <input id="usuario" type="text" name="usuario" required="required" autocomplete="off">
+                <label for="usuario">Usuario:</label>
+            </div>
+
+            <div>
+                <input id="pass" type="password" name="pass" required="required">
+                <label for="">Contraseña:</label>
+            </div>
+
+            <div>
+                <input id="pass2" type="password" name="pass2" required="required">
+                <label for="pass2">Repetir Contraseña:</label>
+            </div>
+            
+            <label class="error">Introduce los datos correctamente</label><br>
+            <label class="exito">Los datos se envieron correctamente</label>
+
+            <input type="submit" class="submit" name="enviar" value="Registrarme">
+           
+        </form>
+
+       
+
+        <p class="link">
+            ¿Ya estas registrado?
+            <a href="index.php" class="link"> Iniciar Sesion</a>
+        </p>
+
+    </div>
+    
+</body>
+</html>

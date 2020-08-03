@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../css/1.style.login.css">  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/1.style.login.css">
     <title>Iniciar Sesion</title>
 </head>
 <body>
@@ -12,29 +13,31 @@
         <h1 class="titulo"> Iniciar Sesion </h1>
         <br>
 
-        <form action="" class="formulario">
+        <!--- <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" name="login"></form> -->
+        <form class="formulario" mathod="POST">
             
-            <div>
-                <input type="text" name="usuario" required="required">
+            <div class="entrada">
+                <input type="text" name="usuario" autocomplete="off" required="required">
                 <label for="">Usuario:</label>
             </div>
 
-            <div>
+            <div class="entrada">
                 <input type="password" name="password" required="required">
                 <label for="">Contraseña:</label>
             </div>
+
+            <label class="error">Introduce los datos correctamente</label><br>
         
             <input type="submit" class="submit-btn" name="Iniciar Sesión">
             
         </form>
 
-
-        <p class="texto-registrate">
-            <a href="#">¿Olvidaste tú contraseña?</a>
+        <p>
+            <a href="olvidar.php" class="link">¿Olvidaste tú contraseña?</a>
             <br><br><br>
 
             ¿Aún no tienes cuenta?
-            <a href="registrate.php"> Registrate</a>
+            <a href="registrate.php" class="link"> Registrate</a>
         </p>
 
     </div>

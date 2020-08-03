@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    background: url(../img/fondo2.jpg);
+    background-position: center;  /*Desde el centro de la imagen Muestrala y expandela*/
+    background-size: cover;  /* Muestra la imagen con todo el ancho que se tenga disponible*/
+    height: 100vh;      /*Ajusta la img a la pantalla*/
+    min-height: 900px;  /*tamaño minimo para que se vea bien la img*/
+}
+
+.contenedor {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 450px;
+    padding: 30px 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48%, -50%);
+
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    padding: 3px;
+    margin-bottom: 35px;
+}
+
+.formulario input[type="text"],
+.formulario input[type="password"],
+.formulario input[type="email"] {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px 0;             /*Padding entre el texto y la caja de texto*/
+    margin-bottom: 28px;        /*Margen que abra entre cada caja de texto*/
+    width: 100%;                /*Abcho de la caja de texto*/
+    height: 25px;               /*Alto de la caja de texto*/
+    font-size: 16px;            /*Tamaño de la fuente*/
+    color: #fff;              /*Color de la fuente*/
+    box-sizing: border-box;     /*El elemnto, el relleno y borde se incluyen en el ancho y altura*/
+    box-shadow: none;           /*Quita las sombras a un elemnto div*/
+    border: none;               /*Quita el borde a la caja de texto*/
+    outline: none;              /*Quita la seleccion de la caja*/
+    border-bottom: 1px solid #0b7df0;
+}
+
+.contenedor form div{
+    position: relative;         /*Los elementos div*/
+}
+
+.contenedor form div label {
+    position: absolute;
+    top: 3px;                     /*Sube los label*/
+    left: 3px;                    /*Recorre los label a la izquierda*/
+    pointer-events: none;       /*La caja no debe reaccionar a un evento de puntero*/
+    color: gray;
+    font-size: 16px;
+    transition: .5s;
+}
+
+.contenedor input:focus ~ label,
+.contenedor input:valid ~ label {
+    top: -18px;
+    left: 8;
+    color:#0b7df0;
+    font-size: 12px;
+    font-weight: bold;
+} 
+
+.contenedor .submit {
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    width: 70%;
+    height: 40px;
+    padding: 6px;
+    margin-left: 50px;
+    margin-top: 20px;
+    background: #0b7df0;
+    cursor: pointer;
+    outline: none;
+    border: none;
+
+    border-radius: 25px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;   
+}
+
+.contenedor input[type = "submit"]:hover {
+    background: #0b7df0;
+    border: 1px solid #a9a9a9;
+    color: #a9a9a9;
+}
+
+.contenedor p {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 38px;
+}
+
+a:link {
+    text-decoration: none;
+    color: #bd6704;
+    font-size: 18;
+    font-weight: bold;
+}
+
+a:hover {
+    font-size: 18px;
+    color: #bd6704;
+    text-decoration: underline;
+}
+
+.formulario .error {
+    color: red;
+    font-weight: bold;
+    font-size: 18;
+    margin-bottom: 10px;
+}
+
+.formulario .exito {
+    font-weight: bold;
+    font-size: 18;
+    color: green;
+    
+}
+
+
+
